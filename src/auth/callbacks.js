@@ -5,4 +5,9 @@ export default ((module) => {
     options['drawProgressive'](canvas);
     options['drawComplete'](canvas, options, pageIdx);
   };
+
+  module['dC'] = (onDocumentLoaded, trigger) => {
+    onDocumentLoaded();
+    trigger('documentComplete');
+  };
 })(window);
